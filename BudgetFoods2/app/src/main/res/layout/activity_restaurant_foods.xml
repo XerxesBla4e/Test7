@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".Student.RestaurantFoods">
+
+    <!-- ImageView to display the background image -->
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:scrollbarThumbHorizontal="@color/grey"
+        android:scrollbarThumbVertical="@color/grey"
+        android:src="@drawable/kfc" />
+
+    <!-- Layout to be displayed on top of the background image -->
+    <RelativeLayout
+        android:id="@+id/resdets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/background_image"
+        android:background="@drawable/curvy">
+
+        <!-- Linear Layout for the top row -->
+        <LinearLayout
+            android:id="@+id/infolin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Restaurant Name TextView -->
+            <TextView
+                android:id="@+id/restaurant_name_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Restaurant Name"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <!-- Food Type TextView -->
+            <TextView
+                android:id="@+id/food_type_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Food Type"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- RatingBar and number of ratings below the top row -->
+        <LinearLayout
+            android:id="@+id/ratings3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/infolin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/rating_bar22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Rating"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/number_of_ratings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat"
+                android:text="0 Ratings"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/resrecview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratings3"
+            tools:listitem="@layout/specificrestrecyclerview" />
+
+        <!-- ImageView for the SVG with "Rate Us" -->
+        <ImageView
+            android:id="@+id/rate_us_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Rate Us Icon"
+            android:src="@drawable/rateus" />
+
+        <!-- TextView for "Rate Us" text -->
+        <TextView
+            android:id="@+id/rate_us_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rate_us_icon"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Rate Us"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
